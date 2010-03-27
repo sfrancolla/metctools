@@ -1,14 +1,7 @@
 package org.kohera.metctools.util;
 
-import java.math.BigDecimal;
-
-import org.marketcetera.trade.BrokerID;
-import org.marketcetera.trade.Factory;
-import org.marketcetera.trade.MSymbol;
-import org.marketcetera.trade.OrderSingle;
-import org.marketcetera.trade.OrderType;
-import org.marketcetera.trade.Side;
-import org.marketcetera.trade.TimeInForce;
+import java.math.*;
+import org.marketcetera.trade.*;
 
 /**
  * Utility class to help build orders.
@@ -171,17 +164,50 @@ public class OrderBuilder {
 		return this;
 	}
 	
-	/**
-	 * Sets the orderType value for the order.
-	 * 
-	 * @param type
-	 * @return
-	 */
-	public OrderBuilder withOrderType( OrderType type ) {
-		order.setOrderType(type);
-		return this;
-	}
-	
+    /**
+     * Sets the orderType value for the order.
+     * 
+     * @param type
+     * @return
+     */
+    public OrderBuilder withOrderType( OrderType type ) {
+        order.setOrderType(type);
+        return this;
+    }
+    
+    /**
+     * Sets the orderCapacity value for the order.
+     * 
+     * @param orderCapacity
+     * @return
+     */
+    public OrderBuilder withOrderCapacity( OrderCapacity orderCapacity ) {
+        order.setOrderCapacity(orderCapacity);
+        return this;
+    }
+    
+    /**
+     * Sets the price value for the order.
+     * 
+     * @param price
+     * @return
+     */
+    public OrderBuilder withPrice( BigDecimal price ) {
+        order.setPrice(price);
+        return this;
+    }
+    
+    /**
+     * Sets the positionEffect value for the order.
+     * 
+     * @param positionEffect
+     * @return
+     */
+    public OrderBuilder withPositionEffect( PositionEffect positionEffect ) {
+        order.setPositionEffect(positionEffect);
+        return this;
+    }
+    
 	/**
 	 * Sets the orderQuantity value for the order.
 	 * 
